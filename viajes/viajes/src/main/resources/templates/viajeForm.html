@@ -1,114 +1,200 @@
-
-
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
-  <title>Paquete de viajes</title>
 
-  <meta charset="ISO-8859-1">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <head>
 
-</head>
-<body>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-<div class="container">
-  <h2>Paquete de Viajes</h2>
-  <form action="#" th:action="@{/viaje/new}" th:object="${viaje}" method="post">
-    <table class="table">
+    <title>Agencia de Viajes - Programación 2</title>
 
-      <tr>
-        <td></td>
-        <td>
-          <label class="radio-inline"><input type="radio" th:field="*{viaje1}" th:value="CUSCO" name="optradio">CUSCO</label>
+    <!-- Bootstrap core CSS -->
+    <link th:href="@{/vendor/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
 
-        </td>
+    <!-- Custom fonts for this template -->
+    <link rel="stylesheet" th:href="@{/vendor/font-awesome/css/font-awesome.min.css}">
+    <link rel="stylesheet" th:href="@{/vendor/simple-line-icons/css/simple-line-icons.css}">
 
-      </tr>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
 
-      <tr>
-        <td></td>
-        <td>
-          <label class="radio-inline"><input type="radio" th:field="*{viaje1}" th:value="BRASIL" name="optradio">BRASIL</label>
+    <!-- Plugin CSS -->
+    <link rel="stylesheet" th:href="@{/device-mockups/device-mockups.min.css}">
 
-        </td>
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" th:href="@{/css/new-age.min.css}">
 
-      </tr>
-      <tr>
-        <td></td>
-        <td>
-          <label class="radio-inline"><input type="radio" th:field="*{viaje1}" th:value="RUSIA" name="optradio">RUSIA</label>
+  </head>
 
-        </td>
+  <body id="page-top">
 
-      </tr>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">PROGRAMACION 2</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fa fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#download"></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#features"></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#contact"></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <header class="masthead">
+      <div class="container h-100">
+        <div class="row h-100">
+          <div class="col-lg-7 my-auto">
+            <div class="header-content mx-auto">
+              <h1 class="mb-5">Has sido seleccionado para obtener descuentos de viajes a toda parte del mundo</h1>
+            </div>
+          </div>
+          <div class="col-lg-5 my-auto">
+            <div class="device-container">
+              <div class="device-mockup iphone6_plus portrait white">
+                <div class="device">
+                  <div class="screen">
+                    <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
+                    <!-- <img src="../static/img/demo-screen-1.jpg" class="img-fluid" alt="">-->
+                     <img th:src="@{/img/demo-screen-1.jpg}" class="img-fluid" alt="">
+                   </div>
+                   <div class="button">
+                     <!-- You can hook the "home button" to some JavaScript events or just remove it -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+   <section class="brasil">
+      <div class="brasil-content">
+        <div class="container">
+          <h2>Viaja a Brasil.<br>¡Hermosas Playas!</h2>
+          <form action="#" th:action="@{/viaje/new}" th:object="${viaje}" method="post">
+            <input type="text" th:field="*{viaje1}" id="brasil" style="visibility:hidden">
+            <input type="submit" value="Compra Boletos" class="btn btn-outline btn-xl js-scroll-trigger"/>
+          </form>
+        </div>
+      </div>
+      <div class="overlay"></div>
+    </section>
+<section class="tarma">
+      <div class="tarma-content">
+        <div class="container">
+          <h2>Viaja a Tarma.<br>La Bella Perla de los Andes</h2>
+          <form action="#" th:action="@{/viaje/new}" th:object="${viaje}" method="post">
+            <input type="text" th:field="*{viaje1}" id="tarma" style="visibility:hidden">
+            <input type="submit" value="Compra Boletos" class="btn btn-outline btn-xl js-scroll-trigger"/>
+          </form>        </div>
+      </div>
+      <div class="overlay"></div>
+    </section>
+	
+   <section class="cusco">
+      <div class="cusco-content">
+        <div class="container">
+          <h2>Viaja a Cusco.<br>¡El Ombligo del mundo!</h2>
+          <form action="#" th:action="@{/viaje/new}" th:object="${viaje}" method="post">
+            <input type="text" th:field="*{viaje1}" id="cusco" style="visibility:hidden">
+            <input type="submit" value="Compra Boletos" class="btn btn-outline btn-xl js-scroll-trigger"/>
+          </form>        </div>
+      </div>
+      <div class="overlay"></div>
+    </section>
+
+    <section class="cta">
+      <div class="cta-content">
+        <div class="container">
+          <h2>Viaja a Rusia.<br>El mundial te espera</h2>
+
+          <form action="#" th:action="@{/viaje/new}" th:object="${viaje}" method="post">
+              <input type="text" th:field="*{viaje1}" id="rusia" style="visibility:hidden">
+             <input type="submit" value="Compra Boletos" class="btn btn-outline btn-xl js-scroll-trigger"/>
+          </form>
 
 
-      <tr>
-        <td></td>
-        <td>
-          <label class="radio-inline"><input type="radio" th:field="*{viaje1}" th:value="PARIS" name="optradio">PARIS</label>
+        </div>
+      </div>
+      <div class="overlay"></div>
+    </section>
 
-        </td>
+    <section class="contact bg-primary" id="contact">
+      <div class="container">
+        <h2>Viaja
+          <i class="fa fa-heart"></i>
+          con nosotros!</h2>
+        <ul class="list-inline list-social">
+          <li class="list-inline-item social-twitter">
+            <a href="#">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li class="list-inline-item social-facebook">
+            <a href="#">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li class="list-inline-item social-google-plus">
+            <a href="#">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
 
-      </tr>
+    <footer>
+      <div class="container">
+        <p>&copy; Your Website 2018. All Rights Reserved.</p>
+        <ul class="list-inline">
+          <li class="list-inline-item">
+            <a href="#">Privacy</a>
+          </li>
+          <li class="list-inline-item">
+            <a href="#">Terms</a>
+          </li>
+          <li class="list-inline-item">
+            <a href="#">FAQ</a>
+          </li>
+        </ul>
+      </div>
+    </footer>
 
+    <!-- Bootstrap core JavaScript -->
+    <script th:src="@{/vendor/jquery/jquery.min.js}"></script>
+    <script th:src="@{/vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>
 
-      <tr>
-        <td></td>
-        <td>
-          <label class="radio-inline"><input type="radio" th:field="*{viaje1}" th:value="VIENA" name="optradio">VIENA</label>
+    <!-- Plugin JavaScript -->
+    <script th:src="@{/vendor/jquery-easing/jquery.easing.min.js}"></script>
 
-        </td>
+    <!-- Custom scripts for this template -->
+    <script th:src="@{/js/new-age.min.js}"></script>
 
-      </tr>
+  <script>
 
+    document.getElementById("rusia").value="Rusia";
+    document.getElementById("tarma").value="Tarma";
+    document.getElementById("brasil").value="Brasil";
+    document.getElementById("cusco").value="Cusco";
+  </script>
 
-      <tr>
-        <td></td>
-        <td>
-          <label class="radio-inline"><input type="radio" th:field="*{viaje1}" th:value="BUENOSAIRES" name="optradio">BUENOSAIRES</label>
+  </body>
 
-        </td>
-
-      </tr>
-
-
-      <tr>
-        <td></td>
-        <td>
-          <label class="radio-inline"><input type="radio" th:field="*{viaje1}" th:value="CARTAGENA" name="optradio">CARTAGENA</label>
-
-        </td>
-
-      </tr>
-
-
-      <tr>
-        <td></td>
-        <td>
-          <label class="radio-inline"><input type="radio" th:field="*{viaje1}" th:value="AUSTRIA" name="optradio">AUSTRIA</label>
-
-        </td>
-
-      </tr>
-
-
-
-      <tr>
-        <td></td>
-        <td><input type="submit" value="Enviar" class="btn btn-primary"/>
-          <input type="reset" value="Cancel" class="btn btn-danger"/></td>
-        <td></td>
-      </tr>
-    </table>
-
-
-  </form>
-  <br/>
-  <a href="/salary/list">Listar Proyecciones</a>
-</div>
-</body>
 </html>

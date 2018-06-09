@@ -36,7 +36,7 @@ public class ViajeController {
 
         viajeRepository.insert(viaje);
 
-        return "viajeForm";
+        return "index";
     }
 
 
