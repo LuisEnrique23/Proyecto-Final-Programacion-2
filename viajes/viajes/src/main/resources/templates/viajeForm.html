@@ -1,0 +1,114 @@
+
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Paquete de viajes</title>
+
+  <meta charset="ISO-8859-1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+<div class="container">
+  <h2>Paquete de Viajes</h2>
+  <form action="#" th:action="@{/viaje/new}" th:object="${viaje}" method="post">
+    <table class="table">
+
+      <tr>
+        <td></td>
+        <td>
+          <label class="radio-inline"><input type="radio" th:field="*{viaje1}" th:value="CUSCO" name="optradio">CUSCO</label>
+
+        </td>
+
+      </tr>
+
+      <tr>
+        <td></td>
+        <td>
+          <label class="radio-inline"><input type="radio" th:field="*{viaje1}" th:value="BRASIL" name="optradio">BRASIL</label>
+
+        </td>
+
+      </tr>
+      <tr>
+        <td></td>
+        <td>
+          <label class="radio-inline"><input type="radio" th:field="*{viaje1}" th:value="RUSIA" name="optradio">RUSIA</label>
+
+        </td>
+
+      </tr>
+
+
+      <tr>
+        <td></td>
+        <td>
+          <label class="radio-inline"><input type="radio" th:field="*{viaje1}" th:value="PARIS" name="optradio">PARIS</label>
+
+        </td>
+
+      </tr>
+
+
+      <tr>
+        <td></td>
+        <td>
+          <label class="radio-inline"><input type="radio" th:field="*{viaje1}" th:value="VIENA" name="optradio">VIENA</label>
+
+        </td>
+
+      </tr>
+
+
+      <tr>
+        <td></td>
+        <td>
+          <label class="radio-inline"><input type="radio" th:field="*{viaje1}" th:value="BUENOSAIRES" name="optradio">BUENOSAIRES</label>
+
+        </td>
+
+      </tr>
+
+
+      <tr>
+        <td></td>
+        <td>
+          <label class="radio-inline"><input type="radio" th:field="*{viaje1}" th:value="CARTAGENA" name="optradio">CARTAGENA</label>
+
+        </td>
+
+      </tr>
+
+
+      <tr>
+        <td></td>
+        <td>
+          <label class="radio-inline"><input type="radio" th:field="*{viaje1}" th:value="AUSTRIA" name="optradio">AUSTRIA</label>
+
+        </td>
+
+      </tr>
+
+
+
+      <tr>
+        <td></td>
+        <td><input type="submit" value="Enviar" class="btn btn-primary"/>
+          <input type="reset" value="Cancel" class="btn btn-danger"/></td>
+        <td></td>
+      </tr>
+    </table>
+
+
+  </form>
+  <br/>
+  <a href="/salary/list">Listar Proyecciones</a>
+</div>
+</body>
+</html>
