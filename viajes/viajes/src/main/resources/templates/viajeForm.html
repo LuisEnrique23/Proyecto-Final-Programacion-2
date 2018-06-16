@@ -87,10 +87,7 @@
       <div class="brasil-content">
         <div class="container">
           <h2>Viaja a Brasil.<br>¡Hermosas Playas!</h2>
-          <form action="#" th:action="@{/viaje/new}" th:object="${viaje}" method="post">
-            <input type="text" th:field="*{viaje1}" id="brasil" style="visibility:hidden">
-            <input type="submit" value="Compra Boletos" class="btn btn-outline btn-xl js-scroll-trigger"/>
-          </form>
+            <a th:href="@{/pago/new1}" class="btn btn-outline btn-xl js-scroll-trigger">Compra Boletos</a>
         </div>
       </div>
       <div class="overlay"></div>
@@ -99,10 +96,8 @@
       <div class="tarma-content">
         <div class="container">
           <h2>Viaja a Tarma.<br>La Bella Perla de los Andes</h2>
-          <form action="#" th:action="@{/viaje/new}" th:object="${viaje}" method="post">
-            <input type="text" th:field="*{viaje1}" id="tarma" style="visibility:hidden">
-            <input type="submit" value="Compra Boletos" class="btn btn-outline btn-xl js-scroll-trigger"/>
-          </form>        </div>
+            <a th:href="@{/pago/new2}" class="btn btn-outline btn-xl js-scroll-trigger">Compra Boletos</a>
+        </div>
       </div>
       <div class="overlay"></div>
     </section>
@@ -111,10 +106,8 @@
       <div class="cusco-content">
         <div class="container">
           <h2>Viaja a Cusco.<br>¡El Ombligo del mundo!</h2>
-          <form action="#" th:action="@{/viaje/new}" th:object="${viaje}" method="post">
-            <input type="text" th:field="*{viaje1}" id="cusco" style="visibility:hidden">
-            <input type="submit" value="Compra Boletos" class="btn btn-outline btn-xl js-scroll-trigger"/>
-          </form>        </div>
+            <a th:href="@{/pago/new3}" class="btn btn-outline btn-xl js-scroll-trigger">Compra Boletos</a>
+         </div>
       </div>
       <div class="overlay"></div>
     </section>
@@ -123,12 +116,7 @@
       <div class="cta-content">
         <div class="container">
           <h2>Viaja a Rusia.<br>El mundial te espera</h2>
-
-          <form action="#" th:action="@{/viaje/new}" th:object="${viaje}" method="post">
-              <input type="text" th:field="*{viaje1}" id="rusia" style="visibility:hidden">
-             <input type="submit" value="Compra Boletos" class="btn btn-outline btn-xl js-scroll-trigger"/>
-          </form>
-
+            <a th:href="@{/pago/new4}" class="btn btn-outline btn-xl js-scroll-trigger">Compra Boletos</a>
 
         </div>
       </div>
