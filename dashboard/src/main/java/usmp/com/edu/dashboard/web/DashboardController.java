@@ -3,9 +3,12 @@ package usmp.com.edu.dashboard.web;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import usmp.com.edu.dashboard.Correo.sendMail;
+import usmp.com.edu.dashboard.model.Correo;
 import usmp.com.edu.dashboard.model.Dashboard;
 import usmp.com.edu.dashboard.model.Salary;
 import usmp.com.edu.dashboard.repository.DashboardRepository;
@@ -52,6 +55,21 @@ public class DashboardController {
     }
 
 
+    @Scheduled(fixedRate = 60000)
+    public void reportCurrentTime() {
 
+        List<Correo> destinatario= dashRepository.correo();
+         String destinatarioCorreo=destinatario.get(0).getCorreo();
+        int pk =  destinatario.get(0).getPk();
+        System.out.println("pk -------->: " + pk );
+        System.out.println("correo -------->: " + destinatarioCorreo );
+        String asunto = "[COMPRE USTED SU BOLETOS DE VIAJE]";
+        String cuerpo = "http://localhost:9095/viaje/new";
+        sendMail send = new sendMail();
+        sendMail.enviarConGMail(destinatarioCorreo, asunto, cuerpo);
+        /*Actualizar el flag*/
+        dashRepository.actualizar(pk);
+
+    }
 
 }

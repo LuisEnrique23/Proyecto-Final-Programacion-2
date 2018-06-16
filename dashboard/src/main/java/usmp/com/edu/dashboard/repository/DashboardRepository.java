@@ -2,7 +2,10 @@ package usmp.com.edu.dashboard.repository;
 
 
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
+import usmp.com.edu.dashboard.model.Correo;
 import usmp.com.edu.dashboard.model.Salary;
 
 import java.util.List;
@@ -19,7 +22,7 @@ public interface DashboardRepository {
     int viajes();
 
 
-    @Select("SELECT count(flagcorreo) FROM practica2.salary where flagcorreo is not null")
+    @Select("SELECT count(flagcorreo) FROM practica2.salary where flagcorreo <> '1'")
     int correos();
 
 
@@ -41,5 +44,12 @@ public interface DashboardRepository {
 
     @Select("select * from salary")
     List<Salary> findAll();
+
+
+    @Select("SELECT a.idsalary as pk ,a.correo FROM (select idsalary,correo from practica2.salary where flagcorreo <> '1') a ORDER BY RAND()  LIMIT 1")
+    List<Correo> correo();
+
+@Update("UPDATE practica2.salary SET flagcorreo = '1' where idsalary = #{idsalary} ")
+    void actualizar(@Param("idsalary") int idsalary);
 
 }
