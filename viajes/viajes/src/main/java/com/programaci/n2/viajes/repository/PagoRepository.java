@@ -15,7 +15,7 @@ public interface PagoRepository {
     void insert(Pago pago);
 
 
-    @Select("select  max(idsalary) from practica2.salary")
+    @Select("select  idsalary from practica2.salary where flagcorreo = '1'")
     int valuepk();
 
 }

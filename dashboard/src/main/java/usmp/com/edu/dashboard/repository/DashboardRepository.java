@@ -42,14 +42,17 @@ public interface DashboardRepository {
     @Select("SELECT count(*) FROM practica2.viaje where viaje = 'Rusia'")
     int rusia();
 
-    @Select("select * from salary")
+    @Select("select * from salary ORDER BY IDSALARY DESC LIMIT 10")
     List<Salary> findAll();
 
 
-    @Select("SELECT a.idsalary as pk ,a.correo FROM (select idsalary,correo from practica2.salary where flagcorreo <> '1') a ORDER BY RAND()  LIMIT 1")
+    @Select("SELECT a.idsalary as pk ,a.correo FROM (select idsalary,correo from practica2.salary where flagcorreo <> '1' or flagcorreo <> '2' ) a ORDER BY RAND()  LIMIT 1")
     List<Correo> correo();
 
 @Update("UPDATE practica2.salary SET flagcorreo = '1' where idsalary = #{idsalary} ")
     void actualizar(@Param("idsalary") int idsalary);
 
+
+    @Update("UPDATE practica2.salary SET flagcorreo = '2' where idsalary = #{idsalary} ")
+    void actualizar2(@Param("idsalary") int idsalary);
 }

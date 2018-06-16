@@ -19,7 +19,7 @@ import java.util.Map;
 @Controller
 public class DashboardController {
 
-
+    int pk =0;
     @Autowired
     private DashboardRepository dashRepository;
 
@@ -55,12 +55,16 @@ public class DashboardController {
     }
 
 
-    @Scheduled(fixedRate = 60000)
+    @Scheduled(fixedRate = 90000)
     public void reportCurrentTime() {
+if (pk != 0){
 
+            dashRepository.actualizar2(pk);
+
+        }
         List<Correo> destinatario= dashRepository.correo();
          String destinatarioCorreo=destinatario.get(0).getCorreo();
-        int pk =  destinatario.get(0).getPk();
+         pk =  destinatario.get(0).getPk();
         System.out.println("pk -------->: " + pk );
         System.out.println("correo -------->: " + destinatarioCorreo );
         String asunto = "[COMPRE USTED SU BOLETOS DE VIAJE]";
